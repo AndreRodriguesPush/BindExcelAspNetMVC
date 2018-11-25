@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Cadastro de Lista de Credores (Folha de Pagamento)
+        </div>
+
+        <div class="panel-body">
+
+            @using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+            {
+  
+            <div class="form-group">
+
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1" data-toggle="tooltip" data-placement="left" title=" O único formato de arquivo aceito é (.csv) " style="background-color:#fbfd6c">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </span>
+                        <input type="file" id="anexo" name="Anexo" class="form-control" accept=".*" required>
+                    </div>
+                </div>
+
+                <!--Botão Salvar-->
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <input type="submit" id="btnSalvar" class="btn btn-primary btn-lg" value="Salvar" />
+                        <a id="btnCancelar" class="btn btn-warning btn-lg">Cancelar</a>
+                    </div>
+                </div>
+
+
+            </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
